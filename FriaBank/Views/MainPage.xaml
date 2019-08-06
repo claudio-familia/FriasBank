@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FriaBank.Views.MainPage"
+             Title="{Binding Title}">
+
+    <StackLayout Padding="0,25,0,25">
+        <Image Source="{Binding Logo}"
+                   Aspect="AspectFit" 
+                   HeightRequest="120"
+                   WidthRequest="120"
+            />
+        <ActivityIndicator 
+                IsRunning="{Binding IsBusy}"
+                Color="#90caf9"
+                IsVisible="{Binding IsBusy}"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand"
+            />
+        <Label Text="API Cool Beers"
+                HorizontalOptions="Center"
+                FontSize="20"
+                TextColor="#424242"
+                />
+
+        <ListView 
+                IsVisible="{Binding IsNotBusy}"
+                ItemsSource="{Binding BeerList}"
+                CachingStrategy="RecycleElement"
+                RowHeight="60"
+                SelectedItem="{Binding Beer}"   
+                >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ImageCell Height="30" 
+                            ImageSource="{Binding Image}"
+                            Text="{Binding Name}"                            
+                            Detail="{Binding Tagline}"
+                            TextColor="#424242"
+                            DetailColor="#90caf9"                                     
+                        >
+                    </ImageCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+      <Button Text="Load more"
+          BackgroundColor="#eceff1 "
+          TextColor="#90caf9"
+          Command="{Binding LoadMoreCommand}"/>
+    </StackLayout>
+
+</ContentPage>

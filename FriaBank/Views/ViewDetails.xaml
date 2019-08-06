@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="FriaBank.Views.ViewDetails"
+             Title="{Binding Title}">
+    <ScrollView>
+        <StackLayout>
+        <Label Text="Beer's details"
+                HorizontalOptions="Center"
+                FontSize="40"                
+                />
+        <Image Source="{Binding Beer.Image}"
+                   Aspect="AspectFit" 
+                   HeightRequest="120"
+                   WidthRequest="120"
+            />
+
+        <StackLayout Padding="15,5" Orientation="Horizontal">
+            <Label Text="Name: "
+                    FontSize="20"                    
+                />
+            <Label Text="{Binding Beer.Name}"
+                    FontSize="20"
+                    Margin="0,20"
+                    HorizontalTextAlignment="Center"
+                    TextColor="#f57f17"
+                />
+        </StackLayout>
+            <StackLayout Padding="15,5" Orientation="Horizontal">
+            <Label Text="TagLine: "
+                    FontSize="20"                    
+                />
+            <Label Text="{Binding Beer.Tagline}"
+                    FontSize="20"
+                    Margin="0,20"
+                    HorizontalTextAlignment="Center"
+                    TextColor="#f57f17"
+                />
+        </StackLayout>
+            <StackLayout Padding="15,5" Orientation="Horizontal">
+            <Label Text="FirstBrewed: "
+                    FontSize="20"                    
+                />
+            <Label Text="{Binding Beer.FirstBrewed}"
+                    FontSize="20"
+                    Margin="0,20"
+                    HorizontalTextAlignment="Center"
+                    TextColor="#f57f17"
+                />
+        </StackLayout>
+            <StackLayout Padding="15,5" Orientation="Horizontal">
+            <Label Text="Description: "
+                    FontSize="20"                    
+                />
+        </StackLayout>
+
+            <StackLayout Padding="15,5" Orientation="Horizontal">
+
+        <Label Text="{Binding Beer.Description}"
+            FontSize="20"
+            Margin="0,20"
+            HorizontalTextAlignment="Center"
+            TextColor="#f57f17"
+        />
+        </StackLayout>
+        <StackLayout BackgroundColor="Black" WidthRequest="100" HeightRequest="2"></StackLayout>
+        <Label Text="More details for beermaniatics"
+                HorizontalOptions="Center"
+                FontSize="25"                
+                />
+            <StackLayout Padding="15,5" Orientation="Horizontal">
+            <Label Text="Ph: "
+                    FontSize="20"                    
+                />
+            <Label Text="{Binding Beer.Ph}"
+                    FontSize="20"
+                    Margin="0,20"
+                    HorizontalTextAlignment="Center"
+                    TextColor="#f57f17"
+                />
+        </StackLayout>
+            <StackLayout Padding="15,5" Orientation="Horizontal">
+                <Label Text="AttenuationLevel: "
+                    FontSize="20"                    
+                />
+                <Label Text="{Binding Beer.AttenuationLevel}"
+                    FontSize="20"
+                    HorizontalTextAlignment="Center"
+                    TextColor="#f57f17"
+                />
+            </StackLayout>
+            <StackLayout Padding="15,5" Orientation="Horizontal">
+                <Label Text="Fermentation temp: "
+                    FontSize="20"                    
+                />
+                <Label Text="{Binding Beer.Method.Fermentation.Temp.Value}"
+                FontSize="20"
+                HorizontalTextAlignment="Center"
+                TextColor="#f57f17"
+                />
+                <Label Text="{Binding Beer.Method.Fermentation.Temp.Unit}"
+                    FontSize="20"
+                    HorizontalTextAlignment="Center"
+                    TextColor="#f57f17"
+                />
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
